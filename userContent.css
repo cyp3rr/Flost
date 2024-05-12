@@ -1,0 +1,68 @@
+/*************************************************************************************************************************************************************************************************************************************************************
+
+"userContent.css" is a custom CSS file that can be used to specify CSS style rules for Floorp's internal site using "chrome" privileges.
+For instance, if you want to apply CSS at "about:newtab" and "about:home", you can use the following CSS rule:
+
+***********************************************************************
+@-moz-document url-prefix("about:newtab"), url-prefix("about:home") { *
+                                                                      *
+* Write your css *                                                    *
+                                                                      *
+}                                                                     *
+***********************************************************************
+
+NOTE: You can use the userContent.css file without change preferences (about:config)
+
+************************************************************************************************************************************************************************************************************************************************************/
+
+@charset "UTF-8";
+/* Please write your custom CSS under this line*/
+
+html
+    body.activity-stream
+    div#root
+    div.floorp-backdrop-blur-enable
+    div.outer-wrapper.ds-outer-wrapper-breakpoint-override.visible-logo
+    main
+    div.non-collapsible-section
+    div.search-wrapper
+    div.search-inner-wrapper
+    input#newtab-search-text {
+    /* display: none !important; */
+}
+.search-wrapper .search-handoff-button,
+.search-wrapper input {
+}
+
+@-moz-document url(about:blank), url(about:newtab), url(about:home), url(about:privatebrowsing) {
+    .search-wrapper .search-handoff-button,
+    .search-wrapper input {
+        /* display: none; */
+        background-color: rgba(255, 255, 255, 0.4) !important;
+        backdrop-filter: blur(24px);
+    }
+    .search-wrapper .search-handoff-button,
+    .search-wrapper input:hover {
+        backdrop-filter: blur(24px) brightness(120%) con    trast(150%);
+        transition: backdrop=filter 1s ease-in-out;
+    }
+    .search-wrapper .search-inner-wrapper:active input,
+    .search-wrapper input:focus {
+        backdrop-filter: blur(24px) brightness(120%) contrast(150%);
+        transition: backdrop=filter 1s ease-in-out;
+    }
+    .top-site-outer .tile {
+        border-radius: 80px !important;
+    }
+}
+
+/* .element {
+  width: 100px;
+  height: 100px;
+  background-color: blue;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.element:hover {
+  transform: scale(1.2);
+} */
