@@ -124,6 +124,7 @@ Quote: https://userChrome.org | https://github.com/topics/userchrome
    background-color: transparent !important;
 }
 
+/* address bar and drop down  */
 #urlbar-background,
 #searchbar {
   background-color: rgba(128,128,128,0.2) !important;
@@ -160,6 +161,18 @@ hbox#urlbar:hover hbox#page-action-buttons {
 
 #nav-bar:is([downloadsbuttonshown], [unifiedextensionsbuttonshown]) #urlbar-container {
 /*    max-width: 500px; */
+}
+
+/* browser corner-radius */
+vbox#appcontent {
+/*    display: none; */
+   border-radius: 8px !important;
+   overflow: hidden !important;
+}
+
+html#main-window body hbox#browser vbox#appcontent {
+   border-radius: 8px;
+   overflow: hidden;
 }
 
 :root#main-window {
