@@ -39,6 +39,13 @@ Quote: https://userChrome.org | https://github.com/topics/userchrome
   appearance: none;
   background-color: transparent;
   border-top: none;
+  border: none !important;
+}
+
+#nav-bar:not([tabs-hidden="true"]) {
+  box-shadow: none !important;
+  /* This is needed for some toolbar button animations. Gross :( */
+  position: relative;
 }
 
 :root {
@@ -62,7 +69,7 @@ Quote: https://userChrome.org | https://github.com/topics/userchrome
 
 .browser-sidebar2 {
   background: transparent !important;
-  border: var(--toolbar-bgcolor) 0.1px solid;
+  border: none !important;
   border-bottom: solid 5px var(--toolbar-bgcolor);
 }
 
@@ -72,15 +79,17 @@ Quote: https://userChrome.org | https://github.com/topics/userchrome
   background-repeat: no-repeat, no-repeat, no-repeat;
   background-position: center;
   background-size: cover;
+  border: none !important;
 }
 
 .sidebar-splitter {
   appearance: none;
   width: 6px;
   background-color: transparent !important;;
-  border: 1px ThreeDShadow;
+  border: none !important;
   border-style: none solid;
 }
+
 
 #tabbrowser-tabbox[flex], #tabbrowser-tabpanels, browser[type="content-primary"], browser[type="content"] > html{
   background: none !important;
@@ -95,12 +104,55 @@ Quote: https://userChrome.org | https://github.com/topics/userchrome
   text-shadow: none;
 }
 
+/* address bar and drop down  */
 #urlbar-background,
 #searchbar {
-  background-color: transparent !important;
+  background-color: rgba(128,128,128,0.2) !important;
+  backdrop-filter: blur(20px);
   background-clip: border-box;
-  border: 1px solid var(--toolbar-field-border-color);
+  border: none !important;
   border-radius: var(--toolbarbutton-border-radius);
+}
+
+hbox#urlbar box {
+   opacity: 0;
+   transition: opacity 0.3s ease-in-out;
+}
+
+hbox#urlbar:hover box {
+   opacity: 1;
+   transition: opacity 0.3s ease-in-out;
+}
+
+hbox#urlbar hbox#page-action-buttons {
+   opacity: 0;
+   transition: opacity 0.3s ease-in-out;   
+}
+
+hbox#urlbar:hover hbox#page-action-buttons {
+   opacity: 1;
+   transition: opacity 0.3s ease-in-out;   
+}
+
+
+#urlbar[breakout][breakout-extend] {
+   background-color: white !important;   
+}
+
+#nav-bar:is([downloadsbuttonshown], [unifiedextensionsbuttonshown]) #urlbar-container {
+/*    max-width: 500px; */
+}
+
+/* browser corner-radius */
+vbox#appcontent {
+/*    display: none; */
+   border-radius: 8px !important;
+   overflow: hidden !important;
+}
+
+html#main-window body hbox#browser vbox#appcontent {
+   border-radius: 8px;
+   overflow: hidden;
 }
 
 /* :root {
