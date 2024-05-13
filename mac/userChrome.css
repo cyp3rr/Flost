@@ -164,8 +164,7 @@ hbox#urlbar:hover hbox#page-action-buttons {
 }
 
 /* browser corner-radius */
-vbox#appcontent {
-/*    display: none; */
+/* vbox#appcontent {
    border-radius: 8px !important;
    overflow: hidden !important;
 }
@@ -173,7 +172,7 @@ vbox#appcontent {
 html#main-window body hbox#browser vbox#appcontent {
    border-radius: 8px;
    overflow: hidden;
-}
+} */
 
 :root#main-window {
    background-color: transparent !important;
@@ -182,6 +181,54 @@ html#main-window body hbox#browser vbox#appcontent {
 :root:not(:-moz-window-inactive) #navigator-toolbox {
   background-color: transparent !important; 
 }
+
+
+/* floorp corner radius option */
+.browserStack > * {
+    border: 0px solid var(--chrome-content-separator-color) !important;
+    border-radius: 16px !important;
+}
+
+#appcontent[flex] {
+   background: transparent !important;
+   -moz-default-appearance: menupopup !important;
+   appearance: auto !important;
+   background-color: transparent !important;     
+}
+
+vbox.browserContainer {
+   border-color: transparent !important;
+   border-bottom-width: 8px !important;;
+}
+
+#tabbrowser-tabbox, 
+#tabbrowser-tabpanels, 
+hbox.browserSidebarContainer, 
+vbox.browserContainer,
+stack.browserStack,
+browser {
+   background: transparent !important;
+   background-color: transparent !important;      
+}
+
+/* selected tab */
+
+  #TabsToolbar #firefox-view-button[open] > .toolbarbutton-icon,
+  .tab-background:is([selected], [multiselected]) {
+    background-color: rgba(128,128,128,0.5) !important;
+
+  }
+
+/* #tabbrowser-tabbox, 
+#tabbrowser-tabpanels, 
+hbox.browserSidebarContainer, 
+stack.browserStack,
+browser {
+   background: transparent !important;
+   -moz-default-appearance: menupopup !important;
+   appearance: auto !important;
+   background-color: transparent !important;      
+} */
 
 /* make tabs toolbar translucent */
 /* FF 121 removed support for -moz-mac-source-list - using menupopup instead */
