@@ -1,3 +1,4 @@
+
 /*************************************************************************************************************************************************************************************************************************************************************
 
 "userChrome.css" is a custom CSS file that can be used to specify CSS style rules for Floorp's interface (NOT internal site) using "chrome" privileges.
@@ -20,4 +21,129 @@ Quote: https://userChrome.org | https://github.com/topics/userchrome
 /* Please write your custom CSS under this line*/
 
 
+}
+
+.browser-toolbar:not(.titlebar-color) {
+  background-color: transparent !important;
+  color: var(--toolbar-color);
+}
+
+#titlebar:-moz-window-inactive {
+  background-color: transparent !important;
+  color: InactiveCaptionText;
+}
+
+#navigator-toolbox {
+  appearance: none;
+  background-color: transparent;
+  border-top: none;
+  border: none !important;
+}
+
+#nav-bar:not([tabs-hidden="true"]) {
+  box-shadow: none !important;
+  /* This is needed for some toolbar button animations. Gross :( */
+  position: relative;
+} 
+
+/* :root {
+  background-color: transparent !important;;
+  color: -moz-DialogText;
+  font: message-box;
+} */
+
+#TabsToolbar,
+#toolbar-menubar,
+#main-menubar,
+#titlebar:-moz-lwtheme {
+  appearance: none;
+  background-color: transparent;
+  color: inherit;
+}
+
+#browser {
+  background: transparent !important;
+}
+
+.browser-sidebar2 {
+  background: transparent !important;
+  border: none !important;
+  border-bottom: solid 5px var(--toolbar-bgcolor);
+}
+
+#sidebar-select-box {
+  background-color: transparent !important;;
+  background-image: none !important;;
+  background-repeat: no-repeat, no-repeat, no-repeat;
+  background-position: center;
+  background-size: cover;
+  border: none !important;
+}
+
+.sidebar-splitter {
+  appearance: none;
+  width: 6px;
+  background-color: transparent !important;;
+  border: none !important;
+  border-style: none solid;
+}
+
+
+#tabbrowser-tabbox[flex], #tabbrowser-tabpanels, browser[type="content-primary"], browser[type="content"] > html{
+  background: none !important;
+  background-color: transparent !important;
+}
+
+#sidebar-box {
+  --sidebar-background-color: Field;
+  --sidebar-text-color: FieldText;
+  background-color: transparent !important;
+  color: var(--sidebar-text-color);
+  text-shadow: none;
+}
+
+/* address bar and drop down  */
+#urlbar-background,
+#searchbar {
+  background-color: rgba(128,128,128,0.2) !important;
+  backdrop-filter: blur(20px);
+  background-clip: border-box;
+  border: none !important;
+  border-radius: var(--toolbarbutton-border-radius);
+}
+
+hbox#urlbar box {
+   opacity: 0;
+   transition: opacity 0.3s ease-in-out;
+}
+
+hbox#urlbar:hover box {
+   opacity: 1;
+   transition: opacity 0.3s ease-in-out;
+}
+
+hbox#urlbar hbox#page-action-buttons {
+   opacity: 0;
+   transition: opacity 0.3s ease-in-out;   
+}
+
+hbox#urlbar:hover hbox#page-action-buttons {
+   opacity: 1;
+   transition: opacity 0.3s ease-in-out;   
+}
+
+
+#urlbar[breakout][breakout-extend] {
+   background-color: white !important;   
+}
+
+
+vbox#appcontent {
+   border-radius: 8px !important;
+   overflow: hidden !important;
+}
+
+html#main-window body hbox#browser vbox#appcontent {
+   border-radius: 8px;
+   overflow: hidden;
 }
