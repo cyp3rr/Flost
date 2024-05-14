@@ -23,6 +23,8 @@ Quote: https://userChrome.org | https://github.com/topics/userchrome
 
 }
 
+@import "userContent.css";
+
 
 .browser-toolbar:not(.titlebar-color) {
   background-color: transparent !important;
@@ -156,7 +158,8 @@ hbox#urlbar:hover hbox#page-action-buttons {
 
 
 #urlbar[breakout][breakout-extend] {
-   background-color: white !important;   
+/*    background-color: white !important;   
+   opacity: 1 !important; */
 }
 
 #nav-bar:is([downloadsbuttonshown], [unifiedextensionsbuttonshown]) #urlbar-container {
@@ -186,7 +189,7 @@ html#main-window body hbox#browser vbox#appcontent {
 /* floorp corner radius option */
 .browserStack > * {
     border: 0px solid var(--chrome-content-separator-color) !important;
-    border-radius: 16px !important;
+    border-radius: 8px !important;
 }
 
 #appcontent[flex] {
@@ -198,7 +201,9 @@ html#main-window body hbox#browser vbox#appcontent {
 
 vbox.browserContainer {
    border-color: transparent !important;
-   border-bottom-width: 8px !important;;
+   border-bottom-width: 8px !important;
+/*    border-top-width: 8px !important; */
+   margin-top: 8px;
 }
 
 #tabbrowser-tabbox, 
@@ -219,6 +224,15 @@ browser {
 
   }
 
+/* hidden addressbar */
+#navigator-toolbox-background {
+   position: absolute;
+}
+
+#TabsToolbar {
+   margin-top: 30px;
+}
+
 /* #tabbrowser-tabbox, 
 #tabbrowser-tabpanels, 
 hbox.browserSidebarContainer, 
@@ -230,6 +244,32 @@ browser {
    background-color: transparent !important;      
 } */
 
+
+/* floating search bar */
+#urlbar-container {
+   position: absolute;
+   width: 100vw;
+   top: -32px;
+   left: 0;   
+}
+
+#urlbar[breakout][breakout-extend] {
+
+   background-color: rgba(255,255,255,.5) !important;   
+   max-width: 50%;
+   position: absolute;
+   margin-top: 25%;
+   margin-left: 25%;
+   backdrop-filter: blur(20px);
+   border-radius: 16px;
+}
+
+/* .urlbarView {
+   background-color: rgba(255,255,255,.5) !important; 
+   position: absolute;
+   top: 320px;
+} */
+
 /* make tabs toolbar translucent */
 /* FF 121 removed support for -moz-mac-source-list - using menupopup instead */
 :root #TabsToolbar,
@@ -238,4 +278,53 @@ browser {
    -moz-default-appearance: menupopup !important;
    appearance: auto !important;
    background-color: transparent !important;
+}
+
+
+/* tabs */
+/* Target element by tag name and attribute */
+tab[pinned="true"] {
+   position: sticky;
+   z-index: 100;
+   border-radius: 8px !important;
+   background-color: rgba(255,255,255,1) !important;
+   backdrop-filter: blur(20px);
+}
+
+
+/* Apply margin based on counter value */
+arrowscrollbox > tab[pinned="true"]:nth-child(1) {
+   top: 0px;
+}
+
+arrowscrollbox > tab[pinned="true"]:nth-child(2) {
+   top: 40px;
+}
+
+arrowscrollbox > tab[pinned="true"]:nth-child(3) {
+   top: 80px;
+}
+
+arrowscrollbox > tab[pinned="true"]:nth-child(4) {
+   top: 120px;
+}
+
+arrowscrollbox > tab[pinned="true"]:nth-child(5) {
+   top: 160px;
+}
+
+arrowscrollbox > tab[pinned="true"]:nth-child(6) {
+   top: 200px;
+}
+
+arrowscrollbox > tab[pinned="true"]:nth-child(7) {
+   top: 240px;
+}
+
+arrowscrollbox > tab[pinned="true"]:nth-child(8) {
+   top: 280px;
+}
+
+arrowscrollbox > tab[pinned="true"]:nth-child(10) {
+   top: 320px;
 }
