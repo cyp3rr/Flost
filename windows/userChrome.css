@@ -26,6 +26,8 @@ Quote: https://userChrome.org | https://github.com/topics/userchrome
 .browser-toolbar:not(.titlebar-color) {
   background-color: transparent !important;
   color: var(--toolbar-color);
+  -moz-appearance: -moz-win-glass !important;
+  appearance: auto !important; 
 }
 
 #titlebar:-moz-window-inactive {
@@ -37,7 +39,7 @@ Quote: https://userChrome.org | https://github.com/topics/userchrome
   appearance: none;
   background-color: transparent;
   border-top: none;
-  border: none !important;
+  border: none !important; 
 }
 
 #nav-bar:not([tabs-hidden="true"]) {
@@ -46,19 +48,42 @@ Quote: https://userChrome.org | https://github.com/topics/userchrome
   position: relative;
 } 
 
-/* :root {
-  background-color: transparent !important;;
+:root {
+  background-color: rgba(255,255,255,.5) !important;;
   color: -moz-DialogText;
   font: message-box;
-} */
+}
+
+
+
+  #appcontent[flex] {
+    background: none !important;
+    background-color: transparent !important;
+  }
+
+#preferences-root {
+  background-color: transparent !important;
+}
+
+html#preferences-root {
+  background-color: transparent !important;
+}
 
 #TabsToolbar,
 #toolbar-menubar,
 #main-menubar,
-#titlebar:-moz-lwtheme {
+#titlebar:-moz-lwtheme, 
+#TabsToolbar:-moz-lwtheme,
+#toolbar-menubar:-moz-lwtheme,
+#main-menubar:-moz-lwtheme {
   appearance: none;
-  background-color: transparent;
+  background-color: transparent !important;
   color: inherit;
+}
+
+#TabsToolbar:-moz-lwtheme {
+  background-image: none !important;
+  background-color: transparent !important;;
 }
 
 #browser {
@@ -147,3 +172,107 @@ html#main-window body hbox#browser vbox#appcontent {
    border-radius: 8px;
    overflow: hidden;
 }
+
+/* wavefox code */
+@media (-moz-windows-accent-color-in-titlebar: 0)
+        {
+            #main-window[tabsintitlebar]:is(:not(:-moz-lwtheme), [lwt-default-theme-in-dark-mode])
+            {
+                appearance: -moz-win-borderless-glass !important;
+                background-color: transparent !important;
+            }
+
+            :root[tabsintitlebar]:is(:not(:-moz-lwtheme), [lwt-default-theme-in-dark-mode]) #navigator-toolbox
+            {
+                background-color: transparent !important;
+            }
+
+            :root[sizemode="normal"][tabsintitlebar]:is(:not(:-moz-lwtheme), [lwt-default-theme-in-dark-mode]) #navigator-toolbox
+            {
+                margin-block-start: 1px !important;
+            }
+
+            /* System window control buttons */
+
+            @media (min-resolution: 1dppx)
+            {
+                .titlebar-buttonbox-container
+                {
+                    --titlebar-button-inline-padding: 16px;
+                    --titlebar-close-inline-padding: 17px;
+                }
+            }
+
+            @media (min-resolution: 1.25dppx)
+            {
+                .titlebar-buttonbox-container
+                {
+                    --titlebar-button-inline-padding: 17px;
+                    --titlebar-close-inline-padding: 18px;
+                }
+            }
+
+            @media (min-resolution: 1.5dppx)
+            {
+                .titlebar-buttonbox-container
+                {
+                    --titlebar-button-inline-padding: 17px;
+                    --titlebar-close-inline-padding: 17px;
+                }
+            }
+
+            @media (min-resolution: 1.75dppx)
+            {
+                .titlebar-buttonbox-container
+                {
+                    --titlebar-button-inline-padding: 17px;
+                    --titlebar-close-inline-padding: 17px;
+                }
+            }
+
+            @media (min-resolution: 2dppx)
+            {
+                .titlebar-buttonbox-container
+                {
+                    --titlebar-button-inline-padding: 16px;
+                    --titlebar-close-inline-padding: 17px;
+                }
+            }
+
+            :root[tabsintitlebar]:is(:not(:-moz-lwtheme), [lwt-default-theme-in-dark-mode]):not([sizemode="fullscreen"]) .titlebar-button:not(.titlebar-close:hover, .titlebar-close:hover:active) .toolbarbutton-icon
+            {
+                opacity: 0 !important;
+            }
+
+            :root[tabsintitlebar]:is(:not(:-moz-lwtheme), [lwt-default-theme-in-dark-mode]):not([sizemode="fullscreen"]) .titlebar-button:not(.titlebar-close)
+            {
+                margin-inline-end: 1px !important;
+            }
+
+            :root[sizemode="normal"][tabsintitlebar]:is(:not(:-moz-lwtheme), [lwt-default-theme-in-dark-mode]) .titlebar-button
+            {
+                padding-inline: var(--titlebar-button-inline-padding) !important;
+            }
+
+            :root[sizemode="normal"][tabsintitlebar]:is(:not(:-moz-lwtheme), [lwt-default-theme-in-dark-mode]) .titlebar-close
+            {
+                padding-inline: var(--titlebar-close-inline-padding) !important;
+            }
+
+            :root[sizemode="maximized"][tabsintitlebar]:is(:not(:-moz-lwtheme), [lwt-default-theme-in-dark-mode]) .titlebar-button
+            {
+                padding-inline: var(--titlebar-button-inline-padding) !important;
+            }
+
+            :root[sizemode="maximized"][tabsintitlebar]:is(:not(:-moz-lwtheme), [lwt-default-theme-in-dark-mode]) .titlebar-close
+            {
+                margin-inline-end: 2px !important;
+                padding-inline: var(--titlebar-close-inline-padding) !important;
+            }
+        }
+
+    :root:is(:not(:-moz-lwtheme), [lwt-default-theme-in-dark-mode])
+    {
+        --toolbar-bgcolor: color-mix(in srgb, -moz-Dialog 25%, transparent) !important;
+        --toolbar-field-background-color: color-mix(in srgb, Field 25%, transparent) !important;
+    }
