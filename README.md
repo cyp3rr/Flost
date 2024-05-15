@@ -1,4 +1,6 @@
-# floorpcss
+# Flost
+Frost theme for Floorp
+
 CSS theme for Floorp
 
 go to `about:config`
