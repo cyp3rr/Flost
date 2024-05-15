@@ -1,5 +1,5 @@
 # Flost
-Frost theme for Floorp
+Frosty theme for Floorp
 
 CSS theme for Floorp
 
