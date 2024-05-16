@@ -1,0 +1,284 @@
+
+/*************************************************************************************************************************************************************************************************************************************************************
+
+"userChrome.css" is a custom CSS file that can be used to specify CSS style rules for Floorp's interface (NOT internal site) using "chrome" privileges.
+For instance, if you want to hide the tab bar, you can use the following CSS rule:
+
+**************************************
+#TabsToolbar {                       *
+    display: none !important;        *
+}                                    *
+**************************************
+
+NOTE: You can use the userChrome.css file without change preferences (about:config)
+
+Quote: https://userChrome.org | https://github.com/topics/userchrome 
+
+************************************************************************************************************************************************************************************************************************************************************/
+
+@charset "UTF-8";
+@-moz-document url(chrome://browser/content/browser.xhtml) {
+/* Please write your custom CSS under this line*/
+
+
+}
+
+@media (-moz-gtk-csd-available)
+:root[tabsintitlebar] #navigator-toolbox-background {
+  appearance: none !important;
+  -moz-default-appearance: -moz-window-titlebar-maximized;
+}
+
+.browser-toolbar:not(.titlebar-color) {
+  background-color: transparent !important;
+  color: var(--toolbar-color);
+}
+
+
+#navigator-toolbox {
+  appearance: none;
+  background-color: transparent !important;
+  border-top: none;
+  border: none !important; 
+}
+
+#nav-bar:not([tabs-hidden="true"]) {
+  box-shadow: none !important;
+  /* This is needed for some toolbar button animations. Gross :( */
+  position: relative;
+} 
+
+:root {
+  background-color: rgba(255,255,255,0.5) !important;;
+  color: -moz-DialogText;
+  font: message-box;
+  border-radius: 16px !important;
+}
+
+
+  #appcontent[flex] {
+    background: none !important;
+    background-color: transparent !important;
+  }
+
+#preferences-root {
+  background-color: transparent !important;
+}
+
+html#preferences-root {
+  background-color: transparent !important;
+}
+
+#TabsToolbar,
+#toolbar-menubar,
+#main-menubar,
+#titlebar:-moz-lwtheme, 
+#TabsToolbar:-moz-lwtheme,
+#toolbar-menubar:-moz-lwtheme,
+#main-menubar:-moz-lwtheme {
+  background-color: transparent !important;
+  color: inherit;
+}
+
+#TabsToolbar:-moz-lwtheme {
+  background-image: none !important;
+  background-color: transparent !important;;
+}
+
+#browser {
+  background: transparent !important;
+}
+
+.browser-sidebar2 {
+  background: transparent !important;
+  border: none !important;
+  border-bottom: solid 5px var(--toolbar-bgcolor);
+}
+
+#sidebar-select-box {
+  background-color: transparent !important;;
+  background-image: none !important;;
+  background-repeat: no-repeat, no-repeat, no-repeat;
+  background-position: center;
+  background-size: cover;
+  border: none !important;
+}
+
+.sidebar-splitter {
+  appearance: none;
+  width: 6px;
+  background-color: transparent !important;;
+  border: none !important;
+  border-style: none solid;
+}
+
+
+#tabbrowser-tabbox[flex], #tabbrowser-tabpanels, browser[type="content-primary"], browser[type="content"] > html{
+  background: none !important;
+  background-color: transparent !important;
+}
+
+#sidebar-box {
+  --sidebar-background-color: Field;
+  --sidebar-text-color: FieldText;
+  background-color: transparent !important;
+  color: var(--sidebar-text-color);
+  text-shadow: none;
+}
+
+/* address bar and drop down  */
+#urlbar-background,
+#searchbar {
+  background-color: rgba(128,128,128,0.2) !important;
+  backdrop-filter: blur(20px);
+  background-clip: border-box;
+  border: none !important;
+  border-radius: var(--toolbarbutton-border-radius);
+}
+
+hbox#urlbar box {
+   opacity: 0;
+   transition: opacity 0.3s ease-in-out;
+}
+
+hbox#urlbar:hover box {
+   opacity: 1;
+   transition: opacity 0.3s ease-in-out;
+}
+
+hbox#urlbar hbox#page-action-buttons {
+   opacity: 0;
+   transition: opacity 0.3s ease-in-out;   
+}
+
+hbox#urlbar:hover hbox#page-action-buttons {
+   opacity: 1;
+   transition: opacity 0.3s ease-in-out;   
+}
+
+
+#urlbar[breakout][breakout-extend] {
+   background-color: white !important;   
+}
+
+
+vbox#appcontent {
+   border-radius: 8px !important;
+   overflow: hidden !important;
+}
+
+html#main-window body hbox#browser vbox#appcontent {
+   border-radius: 8px;
+   overflow: hidden;
+}
+
+/* floorp corner radius option */
+.browserStack > * {
+    border: 0px solid var(--chrome-content-separator-color) !important;
+    border-radius: 8px !important;
+}
+vbox.browserContainer {
+   border-color: transparent !important;
+   border-bottom-width: 8px !important;;
+}
+
+/* ######## arc style ######### */
+
+/* windows only - aero buttons  */
+/* #nav-bar-customization-target {
+    justify-content: flex-end;
+}
+
+#urlbar-container {
+   position: absolute !important;
+   width: 100vw !important;
+   top: -32px !important;
+   left: 0 !important;    
+}
+
+#navigator-toolbox-background {
+   width: 100vw;
+   top: 0;
+   left: 0;
+   position: fixed;
+   z-index: 999;
+}
+
+
+#urlbar-container {
+   position: absolute !important;
+   width: 100vw !important;
+   top: -32px !important;
+   left: 0 !important;    
+} */
+
+#urlbar[breakout][breakout-extend] {
+
+   background-color: rgba(255,255,255,.5) !important;   
+   max-width: 50%;
+   position: absolute;
+   margin-top: 25%;
+   margin-left: 25%;
+   backdrop-filter: blur(20px);
+   border-radius: 16px;
+}
+
+vbox.browserContainer {
+   margin-top: 8px;
+}
+
+#TabsToolbar {
+   margin-top: 30px;
+}
+
+#sidebar-select-box {
+   margin-top: 32px;
+}
+
+/* tabs */
+/* Target element by tag name and attribute */
+tab[pinned="true"] {
+   position: sticky;
+   z-index: 100;
+   border-radius: 8px !important;
+   background-color: rgba(255,255,255,1) !important;
+   backdrop-filter: blur(20px);
+}
+
+
+/* Apply margin based on counter value */
+arrowscrollbox > tab[pinned="true"]:nth-child(1) {
+   top: 0px;
+}
+
+arrowscrollbox > tab[pinned="true"]:nth-child(2) {
+   top: 40px;
+}
+
+arrowscrollbox > tab[pinned="true"]:nth-child(3) {
+   top: 80px;
+}
+
+arrowscrollbox > tab[pinned="true"]:nth-child(4) {
+   top: 120px;
+}
+
+arrowscrollbox > tab[pinned="true"]:nth-child(5) {
+   top: 160px;
+}
+
+arrowscrollbox > tab[pinned="true"]:nth-child(6) {
+   top: 200px;
+}
+
+arrowscrollbox > tab[pinned="true"]:nth-child(7) {
+   top: 240px;
+}
+
+arrowscrollbox > tab[pinned="true"]:nth-child(8) {
+   top: 280px;
+}
+
+arrowscrollbox > tab[pinned="true"]:nth-child(10) {
+   top: 320px;
+}
