@@ -202,8 +202,6 @@ html#main-window body hbox#browser vbox#appcontent {
 vbox.browserContainer {
    border-color: transparent !important;
    border-bottom-width: 8px !important;
-/*    border-top-width: 8px !important; */
-   margin-top: 8px;
 }
 
 #tabbrowser-tabbox, 
@@ -233,10 +231,6 @@ browser {
    position: absolute;
 } */
 
-#TabsToolbar {
-   margin-top: 30px;
-}
-
 /* #tabbrowser-tabbox, 
 #tabbrowser-tabpanels, 
 hbox.browserSidebarContainer, 
@@ -250,6 +244,14 @@ browser {
 
 
 /* ######## arc style ######### */
+
+vbox.browserContainer {
+   margin-top: 8px;
+}
+
+#TabsToolbar {
+   margin-top: 30px;
+}
 
 #navigator-toolbox-background {
    width: 100vw;
@@ -281,6 +283,27 @@ browser {
    backdrop-filter: blur(20px);
    border-radius: 16px;
 }
+
+/* ######### popup fix ########  */
+
+.dialogBox {
+   background-color: rgba(255,255,255,.5);   
+   border-radius: 16px !important;
+   backdrop-filter: blur(20px) brightness(120%) contrast(1) saturate(2);  
+}
+
+#customURL {
+   
+}
+
+vbox.contentPane > vbox > input {
+   border-radius: 16px !important;
+}
+
+hbox.dialog-button-box > button {
+   border-radius: 16px !important;
+}
+
 
 /* .urlbarView {
    background-color: rgba(255,255,255,.5) !important; 
