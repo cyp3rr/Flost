@@ -5,11 +5,15 @@ Frosty theme for Floorp.
 # Supported OS
 
 macOS ✅
+
 Windows 11 ✅ 
+
 Linux* ✅
+
 ChromeOS** ✅
 
 *Requires your own Compositor that supports blur effect. 
+
 **Only the transparency. No blur effect. 
 
 ## Installation 
