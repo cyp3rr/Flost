@@ -12,7 +12,7 @@ Linux* ✅
 
 ChromeOS** ✅
 
-*Requires your own Compositor that supports blur effect. 
+*Requires your own Compositor that supports blur effect. (Tested on SwayFX, Hyprland)
 
 **Only the transparency. No blur effect. 
 
