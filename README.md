@@ -1,9 +1,19 @@
 # Flost
-Frosty theme for Floorp
+Frosty theme for Floorp. 
+⚠️ Floorp only. No Firefox Support. 
 
-CSS theme for Floorp
+# Supported OS
 
-go to `about:config`
+macOS ✅
+Windows 11 ✅ 
+Linux* ✅
+ChromeOS** ✅
+
+*Requires your own Compositor that supports blur effect. 
+**Only the transparency. No blur effect. 
+
+## Installation 
+Go to `about:config`
 
 add these booleans. 
 
