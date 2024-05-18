@@ -1,38 +1,3 @@
-:root {
-  background-color: transparent !important;
-}
-
-#navigator-toolbox {
-  appearance: none;
-  background-color: transparent !important;
-  &:-moz-window-inactive {
-    background-color: transparent !important;
-  }
-  :root[customizing] & {
-    border-bottom-style: none;
-  }
-  :root[lwtheme] & {
-    background-image: none !important;
-    background-repeat: none !important;
-    background-color: transparent !important;
-    &:-moz-window-inactive {
-      background-color: transparent !important;
-    }
-  }
-  :root[lwtheme-image] & {
-    background-image: none !important;
-  }
-}
-
-.browser-toolbar {
-  &:not(.titlebar-color) {
-    background-color: transparent !important;
-  }
-}
-
-
-/* ####### layout ###### */
-
 body {
   flex-direction: row !important;
 }
@@ -56,6 +21,12 @@ body {
   padding-top: 20px !important;
 }
 
+.browser-toolbar {
+  &:not(.titlebar-color) {
+    background-color: transparent !important;
+  }
+}
+
 #urlbar-input::placeholder,
 .searchbar-textbox::placeholder {
   opacity: 0  !important;
@@ -68,18 +39,14 @@ body {
   top: -40px;
 }
 
-#urlbar-container > * {
-  background-color: transparent !important;
-  background: none !important;
-}
-
 .urlbarView {
   top: 30vh;
   max-width: 50vw;
   left: 25%;
-  background: white;
+  background: rgba(255,255,255,1);
   border-radius: 8px;
   padding: 4px;  
+  box-shadow: 2px 0 8px rgba(0,0,0,.2);
 }
 
 .tab-label-container {
