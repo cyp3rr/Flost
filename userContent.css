@@ -55,22 +55,82 @@ NOTE: You can use the userContent.css file without change preferences (about:con
 html,
 body,
 :root {
-    background: none !important;
-    background-color: transparent !important;
+/*     background: none !important;
+    background-color: transparent !important; */
 }
 
 /* synology DSM  */
 
+/* ##### wallpaper #### */
+#sds-wallpaper {
+    display: none !important;
+}
 
-html.synohdpack.ext-strict > * {
+/* ############# fonts ################# */
+html.synohdpack > * {
     font-family: PreludeWGL !important;
 }
+
+body input,
+body textarea,
+body keygen,
+body select,
+body button,
+body,
+.sds-login-welcome-info .sds-login-welcome-info-wrapper .sds-login-welcome-info-container .sds-login-welcome-info-title,
+.sds-login-welcome-info .sds-login-welcome-info-wrapper .sds-login-welcome-info-container .sds-login-welcome-info-msg {
+font-family: PreludeWGL !important;
+}
+body input:lang(zh-TW),
+body textarea:lang(zh-TW),
+body keygen:lang(zh-TW),
+body select:lang(zh-TW),
+body button:lang(zh-TW),
+body:lang(zh-TW),
+.sds-login-welcome-info .sds-login-welcome-info-wrapper .sds-login-welcome-info-container .sds-login-welcome-info-title:lang(zh-TW),
+.sds-login-welcome-info .sds-login-welcome-info-wrapper .sds-login-welcome-info-container .sds-login-welcome-info-msg:lang(zh-TW) {
+font-family: PreludeWGL !important;
+}
+body input:lang(zh-CN),
+body textarea:lang(zh-CN),
+body keygen:lang(zh-CN),
+body select:lang(zh-CN),
+body button:lang(zh-CN),
+body:lang(zh-CN),
+.sds-login-welcome-info .sds-login-welcome-info-wrapper .sds-login-welcome-info-container .sds-login-welcome-info-title:lang(zh-CN),
+.sds-login-welcome-info .sds-login-welcome-info-wrapper .sds-login-welcome-info-container .sds-login-welcome-info-msg:lang(zh-CN) {
+font-family: PreludeWGL !important;
+}
+body input:lang(ja),
+body textarea:lang(ja),
+body keygen:lang(ja),
+body select:lang(ja),
+body button:lang(ja),
+body:lang(ja),
+.sds-login-welcome-info .sds-login-welcome-info-wrapper .sds-login-welcome-info-container .sds-login-welcome-info-title:lang(ja),
+.sds-login-welcome-info .sds-login-welcome-info-wrapper .sds-login-welcome-info-container .sds-login-welcome-info-msg:lang(ja) {
+font-family: PreludeWGL !important;
+}
+
+h1, h2, h3, h4, p, ol, ul, dl, table, table caption, .note_head, .tutorial-content-box h1, .tutorial-content-box h2, .tutorial-content-box h3, .tutorial-content-box h4, .tutorial-content-box p, .tutorial-content-box div, .online-resource {
+font-family: PreludeWGL !important;
+}
+h1:lang(zh-TW), h2:lang(zh-TW), h3:lang(zh-TW), h4:lang(zh-TW), p:lang(zh-TW), ol:lang(zh-TW), ul:lang(zh-TW), dl:lang(zh-TW), table:lang(zh-TW), table caption:lang(zh-TW), .note_head:lang(zh-TW), .tutorial-content-box div:lang(zh-TW), .online-resource:lang(zh-TW) {
+font-family: PreludeWGL !important;
+}
+h1:lang(zh-CN), h2:lang(zh-CN), h3:lang(zh-CN), h4:lang(zh-CN), p:lang(zh-CN), ol:lang(zh-CN), ul:lang(zh-CN), dl:lang(zh-CN), table:lang(zh-CN), table caption:lang(zh-CN), .note_head:lang(zh-CN), .tutorial-content-box div:lang(zh-CN), .online-resource:lang(zh-CN) {
+font-family: PreludeWGL !important;
+}
+h1:lang(ja), h2:lang(ja), h3:lang(ja), h4:lang(ja), p:lang(ja), ol:lang(ja), ul:lang(ja), dl:lang(ja), table:lang(ja), table caption:lang(ja), .note_head:lang(ja), .tutorial-content-box div:lang(ja), .online-resource:lang(ja) {
+font-family: PreludeWGL !important;
+}
+
 /* variables  */
 :root {
-    --v-font-family-base: Verdana, Arial, sans-seri;
-    --v-font-family-zh-tw: Verdana, Arial, Microsoft JhengHei, sans-serif;
-    --v-font-family-zh-cn: Verdana, Arial, Microsoft YaHei, sans-serif;
-    --v-font-family-ja: Verdana, Arial, Meriyo, sans-serif;
+    --v-font-family-base:  PreludeWGL !important;
+    --v-font-family-zh-tw:  PreludeWGL !important;
+    --v-font-family-zh-cn:  PreludeWGL !important;
+    --v-font-family-ja:  PreludeWGL !important;
     --v-color-font-tier1: rgb(65, 75, 85);
     --v-color-font-tier2: rgba(65, 75, 85, 0.6);
     --v-color-font-tier3: rgba(65, 75, 85, 0.4);
@@ -147,7 +207,7 @@ html.synohdpack.ext-strict > * {
     --v-z-index-affix-inner: 1;
 }
 
-/* contorl panel  */
+/* #################### control panel ################# */
 .v-window {
     --v-window-bkg-color__header: var(--v-color-white);
     --v-window-padding-top__header: 8px;
@@ -195,6 +255,22 @@ html.synohdpack.ext-strict > * {
   font-weight: 900 !important; 
 }
 
+.v-fieldset .v-fieldset-title-wrapper {
+  display: flex;
+  position: relative;
+  padding: var(--v-fieldset-padding__title-wrapper);
+  font-size: var(--v-fieldset-font-size__title-wrapper);
+  font-weight: var(--v-fieldset-font-weight__title-wrapper);
+  line-height: var(--v-fieldset-line-height__title-wrapper);
+  height: var(--v-fieldset-height__title-wrapper);
+  background-color: transparent !important;
+  color: var(--v-fieldset-color__title-wrapper);
+}
+
+v-fieldset-title-wrapper::before, v-fieldset-title::before {
+    display: none !important;
+}
+
 /* folder view  */
 .sds-window-v5 .x-window-tl {
     padding: 0;
@@ -227,6 +303,156 @@ html.synohdpack.ext-strict > * {
     box-shadow: 0 4px 16px 0 rgba(0, 0, 0, 0.6);
     border-radius: 16px !important;
     overflow: hidden;
+}
+
+/* folder view address bar */
+.syno-sds-fs-win .syno-sds-fs-tbar .syno-sds-fs-ttbar .x-toolbar-ct .x-toolbar-cell .ux-pathtoolbar {
+ position:relative;
+ height:24px;
+background-color: rgba(255, 255, 255, 0.3) !important;
+ border-width:1px;
+ border-radius: 16px !important; 
+ border-style:solid;
+ border-color:rgba(198,212,224,0.7);
+ padding:1px 0px
+}
+
+/* ############## address bar ################# */
+.x-window-tbar {
+    padding: 0px !important;
+}
+
+.sds-window-v5 .x-window-tbar .x-toolbar {
+ background-image:none;
+    background-color: rgba(255, 255, 255, 0.2) !important;
+    backdrop-filter: blur(20px) brightness(120%) contrast(1) saturate(2);
+ padding:0 12px;
+ padding-top: 8px !important;
+}
+
+.syno-textfilter .x-form-field-wrap,
+.syno-ux-textfilter .x-form-field-wrap {
+ border:1px solid rgba(198,212,224,0.7);
+ border-radius: 16px !important;
+    background-color: rgba(255, 255, 255, 0.8) !important;
+ background-image:none;
+}
+
+
+/* ########## package centre ###########  */
+
+.syno-pkglist-list, .syno-pkglist-card {
+  transition: background-color 0.3s ease-in-out;
+  background-color: transparent !important;
+}
+
+.syno-pkglist-list:hover, .syno-pkglist-card:hover {
+  transition: background-color 0.3s ease-in-out;
+  background-color: rgba(0, 0, 0, 0.1) !important;
+}
+
+.syno-pkglist-list {
+  height: 64px;
+  position: relative;
+  outline: 1px solid transparent !important;
+  display: -ms-inline-flexbox;
+  display: -webkit-inline-flex;
+  display: inline-flex;
+  width: calc(100% - 36px);
+  padding: 12px 14px 12px 20px;
+  margin: 1px 0px 0px 1px;
+  cursor: pointer;
+    border-radius: 16px; 
+}
+
+.syno-pkglist-card {
+  height: 124px;
+  outline: 1px solid transparent !important;
+  display: -ms-inline-flexbox;
+  display: -webkit-inline-flex;
+  display: inline-flex;
+  position: relative;
+  margin: 1px 0px 0px 1px;
+  cursor: pointer;
+  border-radius: 16px; 
+}
+
+.sds-window-v5.sds-wizard-window .wizard-header-wrap {
+ height:56px;
+ position:relative;
+ color:#fff;
+ background-color: rgba(5, 127, 235,.7)!important;
+}
+
+.wizard-headline {
+    mix-blend-mode: overlay;
+}
+
+.sds-window-v5.sds-wizard-window .wizard-header-wrap:before,
+.sds-window-v5.sds-wizard-window .wizard-header-wrap::before {
+ content:'';
+ display:block;
+ position:absolute;
+ top:0;
+ background-color: rgba(5, 127, 235,.7)!important;
+ width:40px;
+ height:56px;
+ left:-40px;
+ z-index:1
+}
+.sds-window-v5.sds-wizard-window .wizard-header-wrap:after,
+.sds-window-v5.sds-wizard-window .wizard-header-wrap::after {
+ content:'';
+ display:block;
+ position:absolute;
+ top:0;
+ background-color: rgba(5, 127, 235,.7)!important;
+ width:40px;
+ height:56px;
+ right:-40px;
+ z-index:1
+}
+
+/* ########### menu dropdown ########### */
+
+.x-layer.syno-ux-grid-hd-menu,
+.x-layer.syno-ux-editorgrid-hd-menu,
+.x-layer.syno-ux-groupcheck-menu,
+.x-layer.syno-ux-check-menu,
+.x-layer.syno-ux-searchfield-menu,
+.x-layer.syno-ux-menu,
+.x-layer.syno-ux-schedule-menu,
+.x-layer.syno-ux-button-menu,
+.x-layer.syno-ux-datefield-menu {
+ background: rgba(255, 255, 255, 0.5) !important;
+ border:1px solid rgba(198,212,224,0.7);
+ box-shadow:0 1px 4px 0 rgba(0,0,0,0.16);
+ border-radius: 16px !important;
+ padding:8px;
+    backdrop-filter: blur(20px) brightness(110%) contrast(1) saturate(2);
+}
+
+.syno-ux-grid-hd-menu .x-menu-list-item,
+.syno-ux-editorgrid-hd-menu .x-menu-list-item,
+.syno-ux-groupcheck-menu .x-menu-list-item,
+.syno-ux-check-menu .x-menu-list-item,
+.syno-ux-searchfield-menu .x-menu-list-item,
+.syno-ux-menu .x-menu-list-item,
+.syno-ux-schedule-menu .x-menu-list-item,
+.syno-ux-button-menu .x-menu-list-item,
+.syno-ux-datefield-menu .x-menu-list-item {
+ position:relative;
+ background-image:none;
+ background-color: transparent !important;
+ border:none;
+ border-radius:3px;
+ padding:0px;
+ margin:0px
+}
+
+/* ############ download station ######### */
+.syno-ux-tab-panel .syno-ux-formpanel {
+  background-color: transparent !important;
 }
 
 /* input areas in general */
@@ -351,6 +577,18 @@ html.synohdpack.ext-strict > * {
     overflow: hidden;
     position: relative;
     backdrop-filter: brightness (120%);
+}
+
+.x-panel-noborder .x-panel-tbar-noborder .x-toolbar.syno-dl-toolbar .syno-dl-toolbar-amule-search .x-form-field-wrap-center-img {
+ border-radius: 16px 0 0 16px !important;
+ width:37px;
+ height:26px;
+}
+
+.x-panel-noborder .x-panel-tbar-noborder .x-toolbar.syno-dl-toolbar .syno-dl-toolbar-amule-search .syno-dl-amule-search-input-box {
+ border:solid rgba(198,212,224,0.7);
+ border-width:1px 1px 1px 0;
+ border-radius:0 16px 16px 0 !important;
 }
 
 /* buttons default */
@@ -591,7 +829,180 @@ html.synohdpack.ext-strict > * {
     vertical-align: top;
 }
 
-/* widgets */
+/* ############# storage manager ############# */
+
+.sm-overview-panel{
+    background-color: transparent !important;
+    box-shadow:0 -1px 0 0 rgba(198,212,224,.5)
+}
+
+.sm-overview-health-container{
+    background: rgba(255,255,255,.5) !important;
+    border: 0px solid rgba(198,215,224,0.4) !important;
+    box-shadow:0 4px 9px 0 rgba(0,0,0,0.02);
+    border-radius: 16px !important;
+    margin-top:16px;
+    min-height:108px
+}
+
+.sm-overview-volume-container{
+background: rgba(255,255,255,.5) !important;
+    border:0px solid rgba(198,215,224,0.4) !important;
+    box-shadow:0 4px 9px 0 rgba(0,0,0,0.02);
+border-radius: 16px !important;
+    margin-top:16px
+}
+
+.sm-overview-volume-card-container{
+background: rgba(255,255,255,.5) !important;
+border-radius: 16px !important;
+    margin-bottom:12px;
+    min-width:434px;
+    max-width:525px;
+    width:calc(50% - 14px);
+    height:72px;
+    margin-right:12px;
+    position:relative;
+    float:left
+}
+
+.sm-usage-wrapper .sm-usage-bg{
+    height:8px;
+    border-radius:4px;
+    background-color:rgba(255,255,255,.5) !important;
+}
+.sm-usage-wrapper .sm-usage-bar{
+    height:8px;
+    background: rgba(5, 127, 235,.8) !important;
+    backdrop-filter: brightness(120%);
+}
+
+/* ################## resource monitor ################# */
+
+canvas {
+    mix-blend-mode: overlay screen;
+    opacity: .7;
+   border-radius: 8px;
+   backdrop-filter: brightness(120%) contrast(2);
+}
+
+.syno-process-group.syno-ux-gridpanel .x-grid3-header .x-treegrid-header-inner {
+ background-color: transparent !important;
+   font-weight: 900;
+}
+
+.x-treegrid-root-table:nth-child(even) > .x-tree-node-el  {
+
+    
+}
+
+
+table.x-treegrid-root-table:nth-child(2) .x-tree-node-el {
+    background-color: red !important;
+}
+
+
+/* tbody.x-tree-node */
+
+.syno-process-group.syno-ux-gridpanel .x-tree-node-el {
+ background-color:white;
+ border-bottom:1px solid rgba(198,212,224,0.4);
+ border-width:0 0 1px 0;
+ padding-top:0px
+}
+
+.x-tree-node > .x-tree-node-el {
+ background-color: transparent !important;
+ border-bottom:1px solid rgba(198,212,224,0.4);
+ border-width:0 0 1px 0;
+ padding-top:0px
+}
+
+/* ########## security advisor ############### */
+
+.securityscan-overview-panel {
+ background: transparent !important;
+ box-shadow:0 -1px 0 0 rgba(198,212,224,0) !important;
+ margin-left:1px
+}
+.securityscan-overview-panel-card {
+ background: rgba(255,255,255,.5) !important;
+ border:0px solid rgba(198,215,224,0.4) !important;;
+ box-shadow:0 4px 9px 0 rgba(0,0,0,0.0);
+ border-radius: 16px !important;
+ margin:0px;
+ padding:19px;
+ height:425px
+}
+
+/* #################### log center ################  */
+
+.syno-syslog-overview-panel {
+ background: transparent !important;
+ box-shadow:0 -1px 0 0 rgba(198,212,224,0.5) !important;
+ margin-left:1px
+}
+.syno-syslog-overview-panel-card {
+background: rgba(255,255,255,.5) !important;
+ border:0px solid rgba(198,215,224,0.) !important;
+ box-shadow:0 4px 9px 0 rgba(0,0,0,0.0) !important;
+ border-radius: 16px !important;
+ margin:0px;
+ padding:18px 18px 10px 18px
+}
+
+.syno-ux-triggerfield,
+.syno-ux-combobox,
+.syno-ux-colorfield,
+.syno-ux-schedulefield,
+.syno-ux-datefield,
+.syno-ux-timefield,
+.syno-ux-superboxselect {
+ font-size:13px;
+background: rgba(255,255,255,.5) !important;
+ background-image:none;
+ padding:3px 0 3px 11px;
+ border-right:0px;
+ border-radius: 16px 0 0 16px !important;
+}
+
+.x-form-field-trigger-wrap .x-form-trigger.syno-ux-triggerfield-trigger,
+.x-form-field-trigger-wrap .x-form-trigger.syno-ux-combobox-trigger,
+.x-form-field-trigger-wrap .x-form-trigger.syno-ux-colorfield-trigger,
+.x-form-field-trigger-wrap .x-form-trigger.syno-ux-schedulefield-trigger,
+.x-form-field-trigger-wrap .x-form-trigger.syno-ux-datefield-trigger,
+.x-form-field-trigger-wrap .x-form-trigger.syno-ux-timefield-trigger {
+ background-image:url("images/1x/combo_trigger.png?v=8710c149eda822e2cea65d04294fe3b4");
+ background-position:0px 1px;
+ background-color: rgba(255,255,255,.5) !important;
+ border:1px solid rgba(198,212,224,0.7);
+ border-left:0px;
+ width:26px;
+ height:26px;
+ border-radius:0 16px 16px 0 !important;
+}
+
+.syno-ux-combobox-list.x-layer.x-combo-list {
+ border-color:rgba(198,212,224,0.7);
+background-color: rgba(255,255,255,.5) !important;
+ padding:8px;
+ box-shadow:0 1px 4px 0 rgba(0,0,0,0.16);
+ border-radius: 16px !important;
+}
+.syno-ux-combobox-list.x-resizable-pinned .x-combo-list-inner {
+ border-bottom:0
+}
+.syno-ux-combobox-list .x-combo-list-item {
+ height:28px;
+ line-height:28px;
+background-color: rgba(255,255,255,.5) !important;
+ font-size:13px;
+ padding:0px 6px 0 12px;
+ border-width:0px;
+ border-radius: 16px !important;
+}
+
+/* ##################### widgets ################# */
 
 .v-widget-window.v-window {
     background: rgba(0, 0, 0, 0.5) !important;
@@ -612,13 +1023,17 @@ html.synohdpack.ext-strict > * {
     backdrop-filter: blur(20px) brightness(120%) contrast(1) saturate(2);
 }
 
+.v-widget-item > canvas {
+    opacity:  0.5 !important;
+}
 
-/* taskbar */
+
+/* ###################### taskbar ################## */
 .taskbar-wrapper {
     position: absolute;
     z-index: 5;
     opacity: 1;
-    top: 0px;
+    top: 12px !important;
     width: 100%;
     height: 39px;
     display: flex;
@@ -665,6 +1080,19 @@ html.synohdpack.ext-strict > * {
   mix-blend-mode: screen;
 }
 
+.preview-box-wrapper {
+  position: absolute;
+  width: 176px;
+  height: 140px;
+  z-index: 13000;
+    background-color: rgba(0, 0, 0, 0.5) !important;
+    backdrop-filter: blur(20px) brightness(120%) contrast(1) saturate(2);   
+  border: 1px solid #969696;
+  border-radius: 16px !important;
+  display: flex;
+  flex-direction: column;
+}
+
 /* app menu */
 .syno-sds-appview {
     background-color: rgba(0, 0, 0, 0.5) !important;
@@ -678,6 +1106,431 @@ html.synohdpack.ext-strict > * {
     backdrop-filter: blur(20px) brightness(120%) contrast(1) saturate(2);
 }
 
+.tray-container {
+  background-color: rgba(0,0,0,.5) !important;
+  box-shadow: 0px 1px 2px rgba(10,20,30,.5);
+  border-radius: 16px !important;
+    backdrop-filter: blur(20px) brightness(120%) contrast(1) saturate(2);    
+}
+
+.taskbar-buttons-container{
+    min-width:150px;
+    height:39px;
+    padding-right:8px;
+    flex:1 1 auto;
+    display:flex;
+    flex-direction:row;
+    white-space:nowrap;
+    overflow:hidden;
+    justify-content: center;
+}
+
+.taskbar-buttons-container .taskbar-buttons-wrapper{
+    background-color: rgba(0,0,0,.5) !important;
+    box-shadow:0px 1px 2px rgba(10,20,30,.5);
+    border:1px solid rgba(255,255,255,.1);
+    border-top-width:0px;
+    height:39px;
+    background-color:rgba(50,60,70,.9);
+    display:inline-flex;
+    vertical-align:top;
+    width:auto;
+    border-radius: 32px !important;
+    backdrop-filter: blur(20px) brightness(120%) contrast(1) saturate(2);   
+    overflow: hidden;
+}
+
+/* ######### notification panel ############## */
+
+.sds-tray-panel {
+  box-shadow: 0px 2px 6px rgba(0,0,0,.5);
+  background-color: rgba(255,255,255,.5) !important;
+  border: 0px none;
+  border-radius: 16px !important;
+  padding: 8px 8px;
+  color: #414b55;
+  backdrop-filter: blur(20px) brightness(120%) contrast(1) saturate(2);
+}
+
+.sds-tray-panel .x-panel-body {
+background-color: rgba(255,255,255,.5) !important;
+  backdrop-filter: blur(20px) brightness(120%) contrast(1) saturate(2);    
+  border: none;
+}
+
+.sds-notify-tray-panel .x-panel-bbar {
+  background-color: rgba(255,255,255,.5) !important;
+  border-top: solid rgba(198,212,224,0.5) 1px;
+  border-radius: 16px !important; 
+    backdrop-filter: blur(20px) brightness(120%) contrast(1) saturate(2);  
+}
+
+
+/* ################ account info panel ################ */
+
+.v-menu {
+  --v-menu-margin-bottom: 0;
+  --v-menu-width: 170px;
+  --v-menu-padding-tb: 8px;
+  --v-menu-padding-lr: 8px;
+  --v-menu-bkg-color: rgba(255,255,255,.8) !important;
+  --v-menu-border-radius: 16px !important;
+  --v-menu-border: 1px solid rgba(198, 212, 224, 0.7);
+  --v-menu-border-width: 1px;
+  --v-menu-box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.16);
+  --v-menu-top__arrow: 2px;
+  --v-menu-right__arrow: 6px;
+  --v-menu-height__arrow: 24px;
+  --v-menu-width__arrow: 12px;
+  --v-menu-padding__item: 0 12px 0 12px;
+  --v-menu-padding__item--submenu: 0 20px 0 12px;
+  --v-menu-padding__checkbox-wrapper: 0 20px 0 12px;
+  --v-menu-border-radius__item: 3px;
+  --v-menu-bkg-color__item--active: rgba(255,255,255,.5) !important;
+  --v-menu-bkg-color__item--disabled: transparent;
+  --v-menu-font-weight__title: 400;
+  --v-menu-font-size__title: 13px;
+  --v-menu-margin__title: 0;
+  --v-menu-line-height__title: 28px;
+  --v-menu-height__title: 28px;
+  --v-menu-color__title: rgb(65, 75, 85);
+  --v-menu-color__title--active: rgb(65, 75, 85);
+  --v-menu-color__title--disabled: rgba(65, 75, 85, 0.4);
+  --v-menu-color__item-link--disabled: rgba(65, 75, 85, 0.4);
+  --v-menu-padding-left__title--with-icon: 24px;
+  --v-menu-color__desc: rgba(65, 75, 85, 0.6);
+  --v-menu-margin-left__desc: 4px;
+  --v-menu-color__item-desc--disabled: ;
+  --v-menu-size__icon: 24px;
+  --v-menu-opacity__icon--disabled: 0.4;
+  --v-menu-top__icon: 2px;
+  --v-menu-margin-left__icon: 6px;
+  --v-menu-size__checkbox: 20px;
+  --v-menu-top__checkbox: 4px;
+  --v-menu-margin-left__checkbox: 8px;
+  --v-menu-height__divider: 1px;
+  --v-menu-margin__divider: 4px 0;
+  --v-menu-bkg-color__divider: rgba(198, 212, 224, 0.4);
+  --v-menu-height__group-title: 28px;
+  --v-menu-line-height__group-title: 28px;
+  --v-menu-color__group-title: rgba(65, 75, 85, 0.6);
+  --v-menu-color__group-title--disabled: rgba(65, 75, 85, 0.4);
+  --v-menu-padding-left__group-title: 6px;
+  --v-menu-padding-right__group-title: 12px;
+  --v-menu-font-size__group-title: 12px;
+  --v-menu-font-weight__group-title: 400;
+  --v-menu-custom: false;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  box-sizing: border-box;
+  outline: none;
+  margin-bottom: var(--v-menu-margin-bottom);
+  width: var(--v-menu-width);
+  padding: calc(var(--v-menu-padding-tb) - var(--v-menu-border-width)) calc(var(--v-menu-padding-lr) - var(--v-menu-border-width));
+  list-style: none;
+  z-index: 1050;
+  z-index: var(--v-z-index-menu-wrapper);
+  box-shadow: var(--v-menu-box-shadow);
+  background: var(--v-menu-bkg-color);
+  border-radius: var(--v-menu-border-radius);
+  border: var(--v-menu-border);
+  border-width: var(--v-menu-border-width);
+  backdrop-filter: blur(20px) brightness(120%) contrast(1) saturate(2); 
+}
+
+.v-menu-item.active {
+    background-color: rgba(0,0,0,.1) !important;
+}
+
+
+/* ######################## dsm help ################## */
+iframe > body {
+  background-color: transparent !important;;
+}
+
+iframe {
+    opacity: 0.8;
+    mix-blend-mode: darken;
+}
+
+/* ######### support center ################ */
+
+.syno-ux-grid-mask-info,
+.x-window .ext-el-mask-msg.syno-ux-mask-info,
+.x-window .ext-el-mask-msg.syno-ux-grid-mask-info,
+.x-panel .ext-el-mask-msg.syno-ux-mask-info,
+.x-panel .ext-el-mask-msg.syno-ux-grid-mask-info {
+ margin:24px;
+ padding:17px 19px;
+ max-width:400px;
+ min-height:20px;
+ border:0px solid rgba(198,212,224,0.7) !important;
+    border-radius: 16px !important;
+ box-shadow:0 1px 4px 0 rgba(0,0,0,0.16);
+ box-shadow: none !important;
+ background-position:20px 10px;
+ background-repeat:no-repeat;
+ cursor:default;
+background: rgba(255,255,255,.8) !important;
+
+}
+
+.sds-window-v5 .ext-el-mask-msg .x-loading-message-inner {
+ padding:7px 20px 7px 20px;
+ background-color: transparent !important;
+    border-radius: 16px !important;
+}
+
+
+/* ###################### san manager  ################### */
+
+.syno-app-iscsi .iscsi-overview-panel {
+ background: transparent !important;
+}
+
+.syno-app-iscsi .x-window-body>.x-panel:not(.syno-ux-modulelist)>.x-panel-bwrap>.x-panel-body>.x-panel.blue-border,
+.syno-app-iscsi .x-window-body>.x-panel:not(.syno-ux-modulelist)>.x-tab-panel.blue-border {
+ top:0px;
+ left:0px;
+background: rgba(255,255,255,.3) !important;
+ position:absolute;
+ width:calc(100% - 40px - 2px) !important;
+ height:calc(100% - 32px - 2px) !important;
+ margin-top:16px;
+ margin-bottom:16px;
+ margin-left:20px;
+ margin-right:20px;
+ border-width: 0px !important;;
+ border-color:rgba(198,212,224,0.4);
+  border-radius: 16px; 
+}
+
+.syno-app-iscsi .iscsi-overview-status-panel .iscsi-overview-statusbox-block .iscsi-overview-statusbox.iscsi-overview-statusbox-click {
+ margin-top:6px;
+background: rgba(255,255,255,0) !important;
+ border-bottom:3px solid #057FEB
+}
+
+/* ################ universal search ###############  */
+
+.syno-finder .index-prompt-toast {
+ border:1px solid #BEC8D2;
+ border-radius:16px !important;
+ background: rgba(255,255,255,.5) !important;
+ box-shadow:0px 1px 4px #000;
+ box-shadow:0px 1px 4px rgba(0,0,0,0.25);
+    backdrop-filter: blur(20px) brightness(120%) contrast(1) saturate(2);
+}
+
+.syno-finder .facet-panel {
+ backdrop-filter: blur(20px) brightness(120%) contrast(1) saturate(2);
+background: none !important;
+ background-color: rgba(255,255,255,.5) !important;
+ box-shadow:0px 1px 4px 0 rgba(0,0,0,0.16);
+ border:1px solid rgba(198,212,224,0.7);
+ border-radius: 16px !important;
+ z-index:20001 !important;
+ padding-left:12px;
+ padding-right:24px;
+ border-bottom-width:0;
+ padding:9px 16px 10px 12px;
+ border-top:1px solid rgba(198,212,224,0.5);
+ padding:16px 24px;
+}
+
+.syno-finder input.x-form-text.x-form-field.dsmsearch-search-textfield {
+    border-radius: 0 16px 16px 0 !important;
+}
+
+.syno-finder .finder-banner {
+  border-top-left-radius: 16px !important;
+  border-bottom-left-radius: 16px !important;
+  background-color: #057FEB;
+  border: 1px solid #057FEB;
+}
+
+.syno-ux-checkbox-icon, .syno-ux-radio-icon {
+  background-image: url("images/svg/checkbox.svg");
+  background-position: 0px 0px;
+  background-color: transparent;
+  width: 20px;
+  height: 20px;
+  border: 0px;
+  margin-top: 2px;
+    border-radius: 100% !important;
+    overflow: hidden !important;
+}
+
+.syno-ux-textfield,
+.ext-strict .x-small-editor .syno-ux-textfield.x-form-text,
+.syno-ux-numberfield {
+ font-size:13px;
+ background-color: rgba(255,255,255,.5) !important;
+ background-image:none;
+ padding-left:11px;
+ padding-right:11px
+}
+
+.x-form-text.syno-ux-textfield, .ext-strict .x-small-editor .x-form-text.syno-ux-textfield, .x-form-text.syno-ux-numberfield {
+  border-color: rgba(198,212,224,0.7);
+  height: 20px;
+  padding-top: 3px;
+  padding-bottom: 3px;
+  border-radius: 16px !important;
+}
+.syno-finder .result-list .tophit-section::after, .syno-finder .result-list .show-all-in-finder::before {
+
+    background: white;
+    content: '';
+    display: none !important;;
+    height: 8px;
+    margin: 0 18px 0 8px;
+    border-bottom: 1px solid rgba(198,212,224,0.4);
+
+}
+
+.syno-finder .result-list {
+  border-right:  0px solid #E6EBF0 !important; 
+}
+
+.syno-finder .view-section-title {
+  height: 32px;
+  box-sizing: border-box;
+  border-bottom: 1px solid rgba(198,212,224,0.7);
+  line-height: 28px;
+  font-size: 15px;
+  color: #057FEB;
+  padding-left: 8px;
+  background:  transparent !important;
+}
+
+.syno-finder .reverse-ellipsis span {
+  min-width: 100%;
+  position: relative;
+  display: inline-block;
+  float: right;
+  overflow: visible;
+  background-color:  transparent !important;
+  text-indent: 0.5em;
+}
+
+.syno-finder .reverse-ellipsis {
+ text-overflow:clip;
+ position:relative;
+ background-color: transparent !important;
+}
+
+.syno-ux-button-default.x-btn-over,
+.syno-ux-button-default:hover,
+.syno-ux-button-default.x-btn-focus {
+ border-color:rgba(124,138,152,0) !important;
+ background-color:rgba(198,212,224,0.4)
+}
+/* ################## storage analyser ################ */
+
+.sds-window-v5 .x-window-bc {
+ background-color:transparent;
+    backdrop-filter: blur(20px) brightness(120%) contrast(1) saturate(2);
+}
+
+svg rect.bar {
+    opacity: .8;
+}
+
+/* ################# container manager ############# */
+
+.docker-package .overview-page {
+ background: transparent !important;
+ display:flex;
+ flex-direction:column;
+ gap:16px;
+ padding:16px 20px
+}
+
+.docker-package .overview-page .row .overview-panel {
+ width:100%;
+ background: rgba(255,255,255,.5) !important;
+ border: 0px solid rgba(198,212,224,0.4) !important;
+ border-radius: 16px !important;
+ box-shadow:0 4px 9px 0 rgba(0,0,0,0.02)
+}
+
+.v-search-input.v-textfield-wrapper {
+ --v-search-input-padding-left: 6px;
+ --v-search-input-margin-right__icon: 4px;
+ --v-search-input-margin-right__icon--advanced: 2px;
+ --v-search-input-padding-right--right-adv: 4px;
+ --v-search-input-margin-left__right-adv: 4px;
+ --v-search-input-margin-left__right-adv--with-suffix-icon: 2px;
+ --v-search-input-border-radius: 16px !important;
+ --v-search-input-padding-tb__dropdown: 16px;
+ --v-search-input-padding-lr__dropdown: 24px;
+ --v-search-input-bkg-color__dropdown: rgba(255,255,255,.5) !important;
+ --v-search-input-border-radius__dropdown: 16px !important;
+ --v-search-input-border__dropdown: 1px solid rgba(198, 212, 224, 0.7);
+ --v-search-input-border-width__dropdown: 1px;
+ --v-search-input-box-shadow__dropdown: 0 1px 4px 0 rgba(0, 0, 0, 0.16);
+ --v-search-input-margin-top__footbar: 20px;
+ --v-search-input-gap__btn: 8px;
+ position:relative;
+}
+
+i.v-icon.docker-status-error {
+     box-shadow: 0px 4px 16px rgba(230, 64, 63,.5);
+    border-radius: 100% !important;
+}
+
+.sm-overview-health-icon {
+    box-shadow: 0px 4px 16px  rgb(245, 132, 19,.5);
+    border-radius: 100% !important;
+}
+
+.syno-sysinfo-system-health-west-warning {
+    box-shadow: 0px 4px 16px  rgb(245, 132, 19,.5);
+    border-radius: 100% !important;    
+}
+
+.sm-overview-health-icon-attention {
+    
+}
+
+/* ################# search popup ############### */
+
+.syno-finder-spotlight-menu {
+ padding:7px;
+background: rgba(255,255,255,.5) !important;
+ box-shadow:0 2px 2px #000;
+ box-shadow:0 2px 5px rgba(0,0,0,0.25);
+ border:1px solid #BCC4CC;
+ border-radius:16px !important;
+    backdrop-filter: blur(20px) brightness(120%) contrast(1) saturate(2);
+}
+
+.syno-finder .search-bar {
+ box-sizing:border-box;
+ border-bottom:2px solid rgba(5,127,235,0.4);
+ border-top-right-radius:6px;
+ border-top-left-radius:6px;
+background: rgba(255,255,255,.5) !important;
+    backdrop-filter: blur(20px) brightness(120%) contrast(1) saturate(2);
+}
+
+.syno-finder .search-bar .text-field {
+  background: transparent !important;
+    background-color: transparent !important;
+}
+
+.syno-finder .index-prompt .add-now-btn button {
+ font-weight:normal;
+ height:28px;
+ font-size:13px;
+ color:white;
+ border-radius: 16px !important;
+ background:#057FEB;
+ border:1px solid transparent
+}
+
 /* ##################### login #################### */
 
 .tab-panel{
@@ -689,10 +1542,59 @@ html.synohdpack.ext-strict > * {
     box-shadow:0 10px 20px 0 rgba(0,0,0,.2);
     box-sizing:border-box;
     border-radius: 16px !important;
+    
     backdrop-filter: blur(20px) brightness(120%) contrast(1) saturate(2);
 }
 
 .login-textfield .input-container input {
     border-radius: 32px;
     padding-left: 16px !important;
+}
+
+.toast-bar[data-v-f2061272]{
+    margin:auto;
+    background:rgba(0,0,0,.5) !important;;
+    box-shadow:0 2px 8px 0 rgba(50,60,70,.4);
+    border-radius: 32px !important; 
+    box-sizing:border-box;
+    padding:12px 24px;
+    backdrop-filter: blur(20px) brightness(120%) contrast(1) saturate(2);
+}
+
+.login-msg-title{
+    position:relative;
+    margin-left:10%;
+    padding-right:10%;
+    margin-bottom:21px;
+    font-size:32px;
+    color:#fff;
+    line-height:42px;
+    word-break:break-word;
+    mix-blend-mode:  overlay;
+    opacity: 1;
+}
+.login-msg-desc{
+    position:relative;
+    margin-left:10%;
+    padding-right:10%;
+    font-size:15px;
+    color:#fff;
+    line-height:21px;
+    word-break:break-word;
+    mix-blend-mode: screen;
+    opacity: .8;
+}
+
+.login-title span{
+    display:block;
+    line-height:32px;
+    font-size:22px;
+    color:#057feb;
+    width:100%;
+    position:relative;
+    text-overflow:ellipsis;
+    overflow:hidden;
+    white-space:nowrap;
+    mix-blend-mode: multiply;
+    opacity: .8;
 }
